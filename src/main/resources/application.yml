@@ -1,0 +1,10 @@
+spring:
+  http:
+  #指定 jersey中文编码   == 实际发现没用
+    encoding:
+      force: true
+      charset: utf--8
+server:
+  # 指定服务端口
+  port: 8080
+  session-timeout: 1800
