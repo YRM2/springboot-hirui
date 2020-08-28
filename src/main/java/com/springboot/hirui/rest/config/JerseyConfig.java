@@ -1,4 +1,4 @@
-package com.springboot.hirui.rest.config;
+/*package com.springboot.hirui.rest.config;
 
 import javax.ws.rs.ApplicationPath;
 
@@ -17,3 +17,4 @@ public class JerseyConfig extends ResourceConfig{
 		register(UserController.class);
 	}
 }
+*/
