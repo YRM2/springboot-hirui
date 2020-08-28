@@ -6,5 +6,5 @@ spring:
       charset: utf--8
 server:
   # 指定服务端口
-  port: 8080
+  port: 8088
   session-timeout: 1800
