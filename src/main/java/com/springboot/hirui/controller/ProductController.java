@@ -25,6 +25,11 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import springfox.documentation.annotations.ApiIgnore;
 
+/**
+ * 商品信息管理类
+ * @author RM
+ *
+ */
 @Api(tags = "商品信息管理")
 @RestController
 public class ProductController {
@@ -35,12 +40,12 @@ public class ProductController {
 	private ProductService productService;
 	
 	@PostMapping("/product")
-	public RestResult addProduct() {
+	public RestResult<String> addProduct() {
 		return RestResult.success("Hi Rui");
 	}
 	
 	@PutMapping("/product")
-	public RestResult putProduct() {
+	public RestResult<String> putProduct() {
 		return RestResult.success("Hi");
 	}
 	
@@ -64,7 +69,7 @@ public class ProductController {
 	}
 	
 	@DeleteMapping("/product")
-	public RestResult deleteProduct() {
+	public RestResult<String> deleteProduct() {
 		return RestResult.success("bye");
 	}
 	

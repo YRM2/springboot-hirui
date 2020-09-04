@@ -1,5 +1,10 @@
 package com.springboot.hirui.exception;
 
+/**
+ * Service层自定义异常
+ * @author RM
+ *
+ */
 @SuppressWarnings("serial")
 public class ServiceException extends Exception{
 

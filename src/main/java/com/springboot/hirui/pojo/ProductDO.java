@@ -9,6 +9,11 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * 商品POJO类
+ * @author RM
+ *
+ */
 @Getter
 @Setter
 @ToString

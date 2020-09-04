@@ -1,5 +1,10 @@
 package com.springboot.hirui.common;
 
+/**
+ * 错误码枚举类
+ * @author RM
+ *
+ */
 public enum ErrorCode implements IErrorCode {
 	SUCCESS("00000", "一切ok"),
 	FAILED("11111", "失败"),
@@ -18,10 +23,12 @@ public enum ErrorCode implements IErrorCode {
 		this.message = message;
 	}
 	
+	@Override
 	public String getCode() {
 		return code;
 	}
 	
+	@Override
 	public String getMessage() {
 		return message;
 	}

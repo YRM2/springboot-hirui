@@ -5,6 +5,12 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 通用返回对象
+ * @author RM
+ *
+ * @param <T> 泛型 返回值
+ */
 @Getter
 @Setter
 @ApiModel(value = "RestResult<T>", description ="通用返回对象")

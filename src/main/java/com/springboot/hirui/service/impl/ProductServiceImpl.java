@@ -12,6 +12,11 @@ import com.springboot.hirui.mapper.ProductMapper;
 import com.springboot.hirui.pojo.ProductDO;
 import com.springboot.hirui.service.ProductService;
 
+/**
+ * 商品Service实现类
+ * @author RM
+ *
+ */
 @Service
 public class ProductServiceImpl implements ProductService {
 

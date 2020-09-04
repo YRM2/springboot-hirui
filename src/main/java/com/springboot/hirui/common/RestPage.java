@@ -9,6 +9,12 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 分页通用对象类
+ * @author RM
+ *
+ * @param <T> 泛型  返回值
+ */
 @Getter
 @Setter
 @ApiModel(value = "RestPage<T>", description ="分页通用对象")
