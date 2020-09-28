@@ -1,6 +1,5 @@
 package com.springboot.hirui.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 import com.springboot.hirui.exception.DAOException;
 import com.springboot.hirui.mapper.ProductMapper;
-import com.springboot.hirui.pojo.ProductDO;
+import com.springboot.hirui.pojo.Product;
 import com.springboot.hirui.service.ProductService;
 
 /**
@@ -24,16 +23,21 @@ public class ProductServiceImpl implements ProductService {
 	private ProductMapper productMapper;
 
 	@Override
-	public List<ProductDO> list(Integer pageSize, Integer pageNum) throws DAOException {
+	public List<Product> list(Integer pageSize, Integer pageNum) throws DAOException {
 		PageHelper.startPage(pageNum, pageSize);
 		try {
-//			return productMapper.slectProducts();
-			String a = null;
-			List<ProductDO> list = new ArrayList<ProductDO>();
-			a.isEmpty();
-			return list;
+			return productMapper.selectAll();
 		} catch (Exception e) {
-			throw new DAOException("select product info faild", e);
+			throw new DAOException("select product info failed", e);
+		}
+	}
+
+	@Override
+	public int insert(Product product) throws DAOException {
+		try {
+			return productMapper.insert(product);
+		} catch (Exception e) {
+			throw new DAOException("insert product failed", e);
 		}
 	}
 	

@@ -9,14 +9,16 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.hirui.common.ErrorCode;
 import com.springboot.hirui.common.RestPage;
 import com.springboot.hirui.common.RestResult;
 import com.springboot.hirui.exception.DAOException;
-import com.springboot.hirui.pojo.ProductDO;
+import com.springboot.hirui.pojo.Product;
 import com.springboot.hirui.service.ProductService;
 
 import io.swagger.annotations.Api;
@@ -39,9 +41,17 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+	@ApiOperation(value = "addProduct", notes = "添加商品")
 	@PostMapping("/product")
-	public RestResult<String> addProduct() {
-		return RestResult.success("Hi Rui");
+	@ResponseBody
+	public RestResult<String> addProduct(@RequestBody Product product) {
+		try {
+			int id = productService.insert(product);
+			return RestResult.success(String.valueOf(id));
+		} catch (DAOException e) {
+			log.error(e.getMessage(), e);
+		}
+		return RestResult.failed(ErrorCode.FAILED, "addProduct failed");
 	}
 	
 	@PutMapping("/product")
@@ -57,10 +67,10 @@ public class ProductController {
                 value = "当前页码", required = true, defaultValue = "1")
 	})
 	@GetMapping("/product")
-	public RestResult<RestPage<ProductDO>> getProduct(@RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize, 
+	public RestResult<RestPage<Product>> getProduct(@RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize, 
 			@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
 		try {
-			List<ProductDO> productList = productService.list(pageSize, pageNum);
+			List<Product> productList = productService.list(pageSize, pageNum);
 			return RestResult.success(RestPage.transformPage(productList));
 		} catch (DAOException e) {
 			log.error(e.getMessage(), e);

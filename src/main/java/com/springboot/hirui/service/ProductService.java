@@ -3,7 +3,7 @@ package com.springboot.hirui.service;
 import java.util.List;
 
 import com.springboot.hirui.exception.DAOException;
-import com.springboot.hirui.pojo.ProductDO;
+import com.springboot.hirui.pojo.Product;
 
 /**
  * 商品Service接口
@@ -19,5 +19,13 @@ public interface ProductService {
 	 * @return
 	 * @throws DAOException
 	 */
-	List<ProductDO> list(Integer pageSize, Integer pageNum) throws DAOException;
+	List<Product> list(Integer pageSize, Integer pageNum) throws DAOException;
+	
+	/**
+	 * 添加商品
+	 * @param product
+	 * @return
+	 * @throws DAOException
+	 */
+	int insert(Product product) throws DAOException;
 }

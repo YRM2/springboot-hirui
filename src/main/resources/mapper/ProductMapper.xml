@@ -1,60 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.springboot.hirui.mapper.ProductMapper">
-	<resultMap id="BaseResultMap" type="com.springboot.hirui.pojo.ProductDO">
-		<id column="id" property="id" />
-		<result column="brand_id" jdbcType="BIGINT" property="brandId" />
-		<result column="product_category_id" jdbcType="BIGINT" property="productCategoryId"/>
-		<result column="feight_template_id" jdbcType="BIGINT" property="feightTemplateId" />
-		<result column="product_attribute_category_id" jdbcType="BIGINT" property="productAttributeCategoryId" />
-    	<result column="name" jdbcType="VARCHAR" property="name" />
-    	<result column="pic" jdbcType="VARCHAR" property="pic" />
-    	<result column="product_sn" jdbcType="VARCHAR" property="productSn" />
-    	<result column="delete_status" jdbcType="INTEGER" property="deleteStatus" />
-    	<result column="publish_status" jdbcType="INTEGER" property="publishStatus" />
-    	<result column="new_status" jdbcType="INTEGER" property="newStatus" />
-    	<result column="recommand_status" jdbcType="INTEGER" property="recommandStatus" />
-    	<result column="verify_status" jdbcType="INTEGER" property="verifyStatus" />
-    	<result column="sort" jdbcType="INTEGER" property="sort" />
-    	<result column="sale" jdbcType="INTEGER" property="sale" />
-    	<result column="price" jdbcType="DECIMAL" property="price" />
-    	<result column="promotion_price" jdbcType="DECIMAL" property="promotionPrice" />
-    	<result column="gift_growth" jdbcType="INTEGER" property="giftGrowth" />
-    	<result column="gift_point" jdbcType="INTEGER" property="giftPoint" />
-    	<result column="use_point_limit" jdbcType="INTEGER" property="usePointLimit" />
-    	<result column="sub_title" jdbcType="VARCHAR" property="subTitle" />
-    	<result column="original_price" jdbcType="DECIMAL" property="originalPrice" />
-    	<result column="stock" jdbcType="INTEGER" property="stock" />
-    	<result column="low_stock" jdbcType="INTEGER" property="lowStock" />
-    	<result column="unit" jdbcType="VARCHAR" property="unit" />
-    	<result column="weight" jdbcType="DECIMAL" property="weight" />
-    	<result column="preview_status" jdbcType="INTEGER" property="previewStatus" />
-    	<result column="service_ids" jdbcType="VARCHAR" property="serviceIds" />
-    	<result column="keywords" jdbcType="VARCHAR" property="keywords" />
-    	<result column="note" jdbcType="VARCHAR" property="note" />
-    	<result column="album_pics" jdbcType="VARCHAR" property="albumPics" />
-    	<result column="detail_title" jdbcType="VARCHAR" property="detailTitle" />
-    	<result column="promotion_start_time" jdbcType="TIMESTAMP" property="promotionStartTime" />
-    	<result column="promotion_end_time" jdbcType="TIMESTAMP" property="promotionEndTime" />
-    	<result column="promotion_per_limit" jdbcType="INTEGER" property="promotionPerLimit" />
-    	<result column="promotion_type" jdbcType="INTEGER" property="promotionType" />
-    	<result column="brand_name" jdbcType="VARCHAR" property="brandName" />
-    	<result column="product_category_name" jdbcType="VARCHAR" property="productCategoryName" />
-	</resultMap>
-	<resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.springboot.hirui.pojo.ProductDO">
-    	<result column="description" jdbcType="LONGVARCHAR" property="description" />
-    	<result column="detail_desc" jdbcType="LONGVARCHAR" property="detailDesc" />
-    	<result column="detail_html" jdbcType="LONGVARCHAR" property="detailHtml" />
+  <resultMap id="BaseResultMap" type="com.springboot.hirui.pojo.Product">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="brand_id" jdbcType="BIGINT" property="brandId" />
+    <result column="product_category_id" jdbcType="BIGINT" property="productCategoryId" />
+    <result column="feight_template_id" jdbcType="BIGINT" property="feightTemplateId" />
+    <result column="product_attribute_category_id" jdbcType="BIGINT" property="productAttributeCategoryId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="pic" jdbcType="VARCHAR" property="pic" />
+    <result column="product_sn" jdbcType="VARCHAR" property="productSn" />
+    <result column="delete_status" jdbcType="INTEGER" property="deleteStatus" />
+    <result column="publish_status" jdbcType="INTEGER" property="publishStatus" />
+    <result column="new_status" jdbcType="INTEGER" property="newStatus" />
+    <result column="recommand_status" jdbcType="INTEGER" property="recommandStatus" />
+    <result column="verify_status" jdbcType="INTEGER" property="verifyStatus" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="sale" jdbcType="INTEGER" property="sale" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="promotion_price" jdbcType="DECIMAL" property="promotionPrice" />
+    <result column="gift_growth" jdbcType="INTEGER" property="giftGrowth" />
+    <result column="gift_point" jdbcType="INTEGER" property="giftPoint" />
+    <result column="use_point_limit" jdbcType="INTEGER" property="usePointLimit" />
+    <result column="sub_title" jdbcType="VARCHAR" property="subTitle" />
+    <result column="original_price" jdbcType="DECIMAL" property="originalPrice" />
+    <result column="stock" jdbcType="INTEGER" property="stock" />
+    <result column="low_stock" jdbcType="INTEGER" property="lowStock" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="weight" jdbcType="DECIMAL" property="weight" />
+    <result column="preview_status" jdbcType="INTEGER" property="previewStatus" />
+    <result column="service_ids" jdbcType="VARCHAR" property="serviceIds" />
+    <result column="keywords" jdbcType="VARCHAR" property="keywords" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="album_pics" jdbcType="VARCHAR" property="albumPics" />
+    <result column="detail_title" jdbcType="VARCHAR" property="detailTitle" />
+    <result column="promotion_start_time" jdbcType="TIMESTAMP" property="promotionStartTime" />
+    <result column="promotion_end_time" jdbcType="TIMESTAMP" property="promotionEndTime" />
+    <result column="promotion_per_limit" jdbcType="INTEGER" property="promotionPerLimit" />
+    <result column="promotion_type" jdbcType="INTEGER" property="promotionType" />
+    <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
+    <result column="product_category_name" jdbcType="VARCHAR" property="productCategoryName" />
+    <result column="description" jdbcType="LONGVARCHAR" property="description" />
+    <result column="detail_desc" jdbcType="LONGVARCHAR" property="detailDesc" />
+    <result column="detail_html" jdbcType="LONGVARCHAR" property="detailHtml" />
     <result column="detail_mobile_html" jdbcType="LONGVARCHAR" property="detailMobileHtml" />
   </resultMap>
-  
-  <insert id="insert" parameterType="com.springboot.hirui.pojo.ProductDO">
-  	<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-  		SELECT LAST_INSERT_ID()
-  	</selectKey>
-  	insert into pms_product (brand_id, product_category_id, feight_template_id, 
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from product
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.springboot.hirui.pojo.Product">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into product (brand_id, product_category_id, feight_template_id, 
       product_attribute_category_id, name, pic, 
       product_sn, delete_status, publish_status, 
       new_status, recommand_status, verify_status, 
@@ -83,28 +82,70 @@
       #{productCategoryName,jdbcType=VARCHAR}, #{description,jdbcType=LONGVARCHAR}, #{detailDesc,jdbcType=LONGVARCHAR}, 
       #{detailHtml,jdbcType=LONGVARCHAR}, #{detailMobileHtml,jdbcType=LONGVARCHAR})
   </insert>
-  <select id="slectProducts" resultMap="ResultMapWithBLOBs">
-  	select * from product
+  <update id="updateByPrimaryKey" parameterType="com.springboot.hirui.pojo.Product">
+    update product
+    set brand_id = #{brandId,jdbcType=BIGINT},
+      product_category_id = #{productCategoryId,jdbcType=BIGINT},
+      feight_template_id = #{feightTemplateId,jdbcType=BIGINT},
+      product_attribute_category_id = #{productAttributeCategoryId,jdbcType=BIGINT},
+      name = #{name,jdbcType=VARCHAR},
+      pic = #{pic,jdbcType=VARCHAR},
+      product_sn = #{productSn,jdbcType=VARCHAR},
+      delete_status = #{deleteStatus,jdbcType=INTEGER},
+      publish_status = #{publishStatus,jdbcType=INTEGER},
+      new_status = #{newStatus,jdbcType=INTEGER},
+      recommand_status = #{recommandStatus,jdbcType=INTEGER},
+      verify_status = #{verifyStatus,jdbcType=INTEGER},
+      sort = #{sort,jdbcType=INTEGER},
+      sale = #{sale,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      promotion_price = #{promotionPrice,jdbcType=DECIMAL},
+      gift_growth = #{giftGrowth,jdbcType=INTEGER},
+      gift_point = #{giftPoint,jdbcType=INTEGER},
+      use_point_limit = #{usePointLimit,jdbcType=INTEGER},
+      sub_title = #{subTitle,jdbcType=VARCHAR},
+      original_price = #{originalPrice,jdbcType=DECIMAL},
+      stock = #{stock,jdbcType=INTEGER},
+      low_stock = #{lowStock,jdbcType=INTEGER},
+      unit = #{unit,jdbcType=VARCHAR},
+      weight = #{weight,jdbcType=DECIMAL},
+      preview_status = #{previewStatus,jdbcType=INTEGER},
+      service_ids = #{serviceIds,jdbcType=VARCHAR},
+      keywords = #{keywords,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR},
+      album_pics = #{albumPics,jdbcType=VARCHAR},
+      detail_title = #{detailTitle,jdbcType=VARCHAR},
+      promotion_start_time = #{promotionStartTime,jdbcType=TIMESTAMP},
+      promotion_end_time = #{promotionEndTime,jdbcType=TIMESTAMP},
+      promotion_per_limit = #{promotionPerLimit,jdbcType=INTEGER},
+      promotion_type = #{promotionType,jdbcType=INTEGER},
+      brand_name = #{brandName,jdbcType=VARCHAR},
+      product_category_name = #{productCategoryName,jdbcType=VARCHAR},
+      description = #{description,jdbcType=LONGVARCHAR},
+      detail_desc = #{detailDesc,jdbcType=LONGVARCHAR},
+      detail_html = #{detailHtml,jdbcType=LONGVARCHAR},
+      detail_mobile_html = #{detailMobileHtml,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, brand_id, product_category_id, feight_template_id, product_attribute_category_id, 
+    name, pic, product_sn, delete_status, publish_status, new_status, recommand_status, 
+    verify_status, sort, sale, price, promotion_price, gift_growth, gift_point, use_point_limit, 
+    sub_title, original_price, stock, low_stock, unit, weight, preview_status, service_ids, 
+    keywords, note, album_pics, detail_title, promotion_start_time, promotion_end_time, 
+    promotion_per_limit, promotion_type, brand_name, product_category_name, description, 
+    detail_desc, detail_html, detail_mobile_html
+    from product
+    where id = #{id,jdbcType=BIGINT}
   </select>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, brand_id, product_category_id, feight_template_id, product_attribute_category_id, 
+    name, pic, product_sn, delete_status, publish_status, new_status, recommand_status, 
+    verify_status, sort, sale, price, promotion_price, gift_growth, gift_point, use_point_limit, 
+    sub_title, original_price, stock, low_stock, unit, weight, preview_status, service_ids, 
+    keywords, note, album_pics, detail_title, promotion_start_time, promotion_end_time, 
+    promotion_per_limit, promotion_type, brand_name, product_category_name, description, 
+    detail_desc, detail_html, detail_mobile_html
+    from product
+  </select>
 </mapper>

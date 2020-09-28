@@ -6,7 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 通用返回对象
+ * 通用返回对象<Br>
+ * 仅用于本系统响应第三方调用，若非本系统返回结果，请不要用此对象封装
  * @author RM
  *
  * @param <T> 泛型 返回值
@@ -46,6 +47,5 @@ public class RestResult<T> {
 	public static <T> RestResult<T> failed(IErrorCode code, String message){
 		return new RestResult<T>(code.getCode(), message, null);
 	}
-	
 	
 }

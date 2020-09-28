@@ -1,29 +1,19 @@
 package com.springboot.hirui.mapper;
 
+import com.springboot.hirui.pojo.Product;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.springboot.hirui.pojo.ProductDO;
-
-/**
- * 商品Mapper
- * @author RM
- *
- */
 @Mapper
 public interface ProductMapper {
+    int deleteByPrimaryKey(Long id);
 
-	/**
-	 * 插入商品数据
-	 * @param product
-	 * @return
-	 */
-	int insert(ProductDO product);
-	
-	/**
-	 * 分页查询商品信息
-	 * @return
-	 */
-	List<ProductDO> slectProducts();
+    int insert(Product record);
+
+    Product selectByPrimaryKey(Long id);
+
+    List<Product> selectAll();
+
+    int updateByPrimaryKey(Product record);
 }
